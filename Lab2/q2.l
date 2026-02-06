@@ -5,7 +5,7 @@ int comment_count = 0;
 %}
 
 %%
-"/*"([^*]|\*+[^*/])*\*+"/"   { comment_count++;}
+"/*"([^*]|\*+[^*/])*\*+"/\n"   { comment_count++;}
 "//".*                       { comment_count++;}
 .                            { putchar(yytext[0]); }
 \n                           { putchar('\n'); }    
